@@ -2,11 +2,11 @@ clc
 clear
 close all
 
-%% Establish Parameters
-Fs = 8000;     % samp rate of 8 kHz
+%% Define Parameters
+Fs = 8000;      % samp rate of 8 kHz
 octave = 2;     % octave of tones
 vol = 0.5;      % volume of tones
-bpm = 240;      % speed expressed in beats per minute
+bpm = 180;      % speed expressed in beats per minute
 
 %% Define notes
 C = 130.8*octave;
@@ -76,6 +76,7 @@ ttls_noteCell = {
     createNote(C, 2, vol, bpm, Fs)
 };
 
+% jingle bells
 jb_noteCell = {
     createNote(E, 1, vol, bpm, Fs),
     createNote(E, 1, vol, bpm, Fs),
@@ -162,7 +163,6 @@ function songArr = createMusic(noteCell)
     for i = 1:size(noteCell)
         songArr = [songArr, noteCell{i}];  % concat note
     end
-
 end
 
 % A function to create a sinusoidal of known freq, amp, and duration.
